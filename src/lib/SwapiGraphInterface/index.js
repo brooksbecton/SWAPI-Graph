@@ -7,7 +7,7 @@ export default (url: string) => {
   const swapiBaseUrl = "https://swapi.co/api/";
 
   let nodes: Array<Object> = [];
-  let edges: Array<{ source: string, target: string }> = [];
+  let edges: Array<{ from: string, to: string }> = [];
   let knownSwapiCollections: Array<String> = [];
 
   return {
@@ -20,15 +20,15 @@ export default (url: string) => {
       while (targetUrl !== null) {
         const resp = await fetch(targetUrl);
         const { next, results } = await resp.json();
-
+        results;
         // Assigning name so that graph can display something
-        results.forEach(item => (item.label = item.name));
+        results.forEach(item => (item.label = item.name || item.title));
 
         // Grouping nodes by their collection
-        results.forEach(
-          item =>
-            (item.group = item.url.slice(7, item.url.length).split("/")[3])
-        );
+        results.forEach(item => {
+          item.id = item.url;
+          item.group = item.url.slice(7, item.url.length).split("/")[3];
+        });
 
         // Targeting next page of results
         targetUrl = next;
@@ -49,8 +49,18 @@ export default (url: string) => {
       knownSwapiCollections = Object.keys(collectionUrls).map(key => key);
     },
 
-    addEdges: () => {
-      nodes.forEach(node => {});
+    addEdges: async () => {
+      nodes.forEach(node => {
+        ["people", "vehicles", "films"].forEach(collectionName => {
+          if (node.hasOwnProperty(collectionName)) {
+            node[collectionName].forEach(url => {
+              console.log({ from: node.url, to: url });
+              edges = edges.concat({ from: node.url, to: url });
+            });
+          }
+        });
+      });
+      return edges;
     }
   };
 };

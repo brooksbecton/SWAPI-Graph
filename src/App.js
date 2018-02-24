@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import vis from "vis";
-
+import "./App.css";
 import SwapiGraphInterface from "./lib/SwapiGraphInterface";
 
 class App extends Component {
@@ -8,11 +8,12 @@ class App extends Component {
     super();
 
     this.state = {
-      nodes: []
+      nodes: [],
+      edges: []
     };
   }
 
-  componentDidMount = async () => {
+  componentDidMount = () => {
     this.getNodes();
   };
 
@@ -21,7 +22,7 @@ class App extends Component {
     var nodes = new vis.DataSet(this.state.nodes);
 
     // create an array with edges
-    var edges = new vis.DataSet([]);
+    var edges = new vis.DataSet(this.state.edges);
 
     // create a network
     var container = document.getElementById("mynetwork");
@@ -38,13 +39,14 @@ class App extends Component {
     };
 
     // initialize your network!
-    var network = new vis.Network(container, data, options);
+    new vis.Network(container, data, options);
   };
 
   getNodes = async () => {
     //TODO hit the root API https://swapi.co/api and get what collections they have for less work later.
     const peopleInterface = SwapiGraphInterface("https://swapi.co/api/people/");
     const peopleNodes = await peopleInterface.getCollectionItems();
+    const peopleEdges = await peopleInterface.addEdges();
 
     const filmsInterface = SwapiGraphInterface("https://swapi.co/api/films/");
     const filmsNodes = await filmsInterface.getCollectionItems();
@@ -77,14 +79,19 @@ class App extends Component {
         speciesNodes,
         starshipsNodes,
         vehiclesNodes
-      )
+      ),
+      edges: this.state.edges.concat(peopleEdges)
     });
 
     this.drawGraph();
   };
 
   render() {
-    return <div id="mynetwork" />;
+    return this.state.nodes.length > 0 ? (
+      <div id="mynetwork" />
+    ) : (
+      <p>Loading</p>
+    );
   }
 }
 
