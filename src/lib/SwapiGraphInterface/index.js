@@ -9,6 +9,16 @@ export default (url: string) => {
   let nodes: Array<Object> = [];
   let edges: Array<{ from: string, to: string }> = [];
   let knownSwapiCollections: Array<String> = [];
+  /**
+   * Queries the SWAPI for it's known collection like people, films, etc
+   * and adds it the object prop 'knownSwapiCollections'
+   */
+  const getKnownCollection = async () => {
+    const resp = await fetch(swapiBaseUrl);
+    const collectionUrls = await resp.json();
+    knownSwapiCollections = Object.keys(collectionUrls).map(key => key);
+    return knownSwapiCollections;
+  };
 
   return {
     /**
@@ -39,22 +49,15 @@ export default (url: string) => {
       return nodes;
     },
 
-    /**
-     * Queries the SWAPI for it's known collection like people, films, etc
-     * and adds it the object prop 'knownSwapiCollections'
-     */
-    getKnownCollection: async () => {
-      const resp = await fetch(swapiBaseUrl);
-      const collectionUrls = await resp.json();
-      knownSwapiCollections = Object.keys(collectionUrls).map(key => key);
-    },
-
     addEdges: async () => {
+      if (knownSwapiCollections.length === 0) {
+        knownSwapiCollections = await getKnownCollection();
+      }
+
       nodes.forEach(node => {
-        ["people", "vehicles", "films"].forEach(collectionName => {
+        knownSwapiCollections.forEach(collectionName => {
           if (node.hasOwnProperty(collectionName)) {
             node[collectionName].forEach(url => {
-              console.log({ from: node.url, to: url });
               edges = edges.concat({ from: node.url, to: url });
             });
           }
