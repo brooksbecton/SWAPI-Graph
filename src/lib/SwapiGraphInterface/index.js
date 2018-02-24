@@ -3,7 +3,7 @@
 /**
  * Interface for adding SWAPI collections to a graph.
  */
-export default (url: string) => {
+export default (url: string, data: ?{}) => {
   const swapiBaseUrl = "https://swapi.co/api/";
 
   let nodes: Array<Object> = [];

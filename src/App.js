@@ -1,5 +1,7 @@
+import localforage from "localforage";
 import React, { Component } from "react";
 import vis from "vis";
+
 import "./App.css";
 import SwapiGraphInterface from "./lib/SwapiGraphInterface";
 
@@ -14,6 +16,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
+    // localforage.removeItem("swapiData");
     this.getNodes();
   };
 
@@ -43,45 +46,69 @@ class App extends Component {
   };
 
   getNodes = async () => {
-    //TODO hit the root API https://swapi.co/api and get what collections they have for less work later.
-    const peopleInterface = SwapiGraphInterface("https://swapi.co/api/people/");
-    const peopleNodes = await peopleInterface.getCollectionItems();
-    const peopleEdges = await peopleInterface.addEdges();
+    const swapiData = await localforage.getItem("swapiData");
+    if (swapiData) {
+      this.setState({
+        cacheEmpty: false,
+        nodes: swapiData.nodes,
+        edges: swapiData.edges
+      });
+    } else {
+      this.setState({ cacheEmpty: true });
+      const peopleInterface = SwapiGraphInterface(
+        "https://swapi.co/api/people/"
+      );
+      const peopleNodes = await peopleInterface.getCollectionItems();
+      const peopleEdges = await peopleInterface.addEdges();
 
-    const filmsInterface = SwapiGraphInterface("https://swapi.co/api/films/");
-    const filmsNodes = await filmsInterface.getCollectionItems();
+      const filmsInterface = SwapiGraphInterface("https://swapi.co/api/films/");
+      const filmsNodes = await filmsInterface.getCollectionItems();
 
-    const planetsInterface = SwapiGraphInterface(
-      "https://swapi.co/api/planets/"
-    );
-    const planetsNodes = await planetsInterface.getCollectionItems();
+      const planetsInterface = SwapiGraphInterface(
+        "https://swapi.co/api/planets/"
+      );
+      const planetsNodes = await planetsInterface.getCollectionItems();
 
-    const speciesInterface = SwapiGraphInterface(
-      "https://swapi.co/api/species/"
-    );
-    const speciesNodes = await speciesInterface.getCollectionItems();
+      const speciesInterface = SwapiGraphInterface(
+        "https://swapi.co/api/species/"
+      );
+      const speciesNodes = await speciesInterface.getCollectionItems();
 
-    const starshipsInterface = SwapiGraphInterface(
-      "https://swapi.co/api/starships/"
-    );
-    const starshipsNodes = await starshipsInterface.getCollectionItems();
+      const starshipsInterface = SwapiGraphInterface(
+        "https://swapi.co/api/starships/"
+      );
+      const starshipsNodes = await starshipsInterface.getCollectionItems();
 
-    const vehiclesInterface = SwapiGraphInterface(
-      "https://swapi.co/api/vehicles/"
-    );
-    const vehiclesNodes = await vehiclesInterface.getCollectionItems();
+      const vehiclesInterface = SwapiGraphInterface(
+        "https://swapi.co/api/vehicles/"
+      );
+      const vehiclesNodes = await vehiclesInterface.getCollectionItems();
 
-    this.setState({
-      nodes: this.state.nodes.concat(
+      const newNodes = this.state.nodes.concat(
         peopleNodes,
         filmsNodes,
         planetsNodes,
         speciesNodes,
         starshipsNodes,
         vehiclesNodes
-      ),
-      edges: this.state.edges.concat(peopleEdges)
-    });
+      );
+
+      const newEdges = this.state.edges.concat(peopleEdges);
+
+      this.setState({
+        nodes: newNodes,
+        edges: newEdges
+      });
+
+      localforage
+        .setItem("swapiData", { nodes: newNodes, edges: newEdges })
+        .then(() => {
+          this.setState({ cacheSuccessful: true });
+        })
+        .catch(error =>
+          this.setState({ cacheSuccessful: false, cachingError: error })
+        );
+    }
 
     this.drawGraph();
   };
