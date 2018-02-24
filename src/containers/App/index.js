@@ -1,6 +1,7 @@
 import React from "react";
 import Graph from "./../Graph";
 import TopNav from "./../../components/TopNav";
+import "./index.css";
 
 const App = () => {
   return (

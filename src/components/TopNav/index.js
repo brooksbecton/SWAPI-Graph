@@ -1,13 +1,29 @@
-import React from "react";
+import React, { Component } from "react";
+import { Menu, Icon } from "antd";
 
-const TopNav = () => (
-  <nav>
-    <ul>
-      <li>a</li>
-      <li>b</li>
-      <li>c</li>
-    </ul>
-  </nav>
-);
+class TopNav extends Component {
+  state = {
+    current: "mail"
+  };
+  handleClick = e => {
+    console.log("click ", e);
+    this.setState({
+      current: e.key
+    });
+  };
+  render() {
+    return (
+      <Menu
+        onClick={this.handleClick}
+        selectedKeys={[this.state.current]}
+        mode="horizontal"
+      >
+        <Menu.Item>Home</Menu.Item>
+        <Menu.Item>Graph</Menu.Item>
+        <Menu.Item>About</Menu.Item>
+      </Menu>
+    );
+  }
+}
 
 export default TopNav;

@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://brooksbecton.github.io/SWAPI-Graph",
   "dependencies": {
+    "antd": "^3.2.1",
     "flow-bin": "^0.66.0",
     "localforage": "^1.5.7",
     "react": "^16.2.0",
