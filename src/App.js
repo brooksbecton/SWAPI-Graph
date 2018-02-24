@@ -20,6 +20,12 @@ class App extends Component {
     this.getNodes();
   };
 
+  clearCache = () => {
+    localforage.removeItem("swapiData");
+    this.setState({ nodes: [], edges: [] });
+    this.getNodes();
+  };
+
   drawGraph = () => {
     // create an array with nodes
     var nodes = new vis.DataSet(this.state.nodes);
@@ -63,26 +69,31 @@ class App extends Component {
 
       const filmsInterface = SwapiGraphInterface("https://swapi.co/api/films/");
       const filmsNodes = await filmsInterface.getCollectionItems();
+      const filmsEdges = await filmsInterface.addEdges();
 
       const planetsInterface = SwapiGraphInterface(
         "https://swapi.co/api/planets/"
       );
       const planetsNodes = await planetsInterface.getCollectionItems();
+      const planetsEdges = await planetsInterface.addEdges();
 
       const speciesInterface = SwapiGraphInterface(
         "https://swapi.co/api/species/"
       );
       const speciesNodes = await speciesInterface.getCollectionItems();
+      const speciesEdges = await speciesInterface.addEdges();
 
       const starshipsInterface = SwapiGraphInterface(
         "https://swapi.co/api/starships/"
       );
       const starshipsNodes = await starshipsInterface.getCollectionItems();
+      const starshipsEdges = await starshipsInterface.addEdges();
 
       const vehiclesInterface = SwapiGraphInterface(
         "https://swapi.co/api/vehicles/"
       );
       const vehiclesNodes = await vehiclesInterface.getCollectionItems();
+      const vehiclesEdges = await vehiclesInterface.addEdges();
 
       const newNodes = this.state.nodes.concat(
         peopleNodes,
@@ -93,7 +104,14 @@ class App extends Component {
         vehiclesNodes
       );
 
-      const newEdges = this.state.edges.concat(peopleEdges);
+      const newEdges = this.state.edges.concat(
+        peopleEdges,
+        filmsEdges,
+        planetsEdges,
+        speciesEdges,
+        starshipsEdges,
+        vehiclesEdges
+      );
 
       this.setState({
         nodes: newNodes,
@@ -115,7 +133,10 @@ class App extends Component {
 
   render() {
     return this.state.nodes.length > 0 ? (
-      <div id="mynetwork" />
+      <div>
+        <button onClick={() => this.clearCache()}>Clear Cache</button>
+        <div id="mynetwork" />
+      </div>
     ) : (
       <p>Loading</p>
     );
