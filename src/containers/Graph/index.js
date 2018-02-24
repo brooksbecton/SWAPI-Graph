@@ -2,8 +2,8 @@ import localforage from "localforage";
 import React, { Component } from "react";
 import vis from "vis";
 
-import "./App.css";
-import SwapiGraphInterface from "./lib/SwapiGraphInterface";
+import "./index.css";
+import SwapiGraphInterface from "./../../lib/SwapiGraphInterface";
 
 class App extends Component {
   constructor() {

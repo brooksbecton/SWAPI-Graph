@@ -30,7 +30,6 @@ export default (url: string, data: ?{}) => {
       while (targetUrl !== null) {
         const resp = await fetch(targetUrl);
         const { next, results } = await resp.json();
-        results;
         // Assigning name so that graph can display something
         results.forEach(item => (item.label = item.name || item.title));
 
