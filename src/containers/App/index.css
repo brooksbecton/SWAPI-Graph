@@ -1,1 +1,16 @@
 @import "~antd/dist/antd.css";
+
+.content {
+  background-color: white;
+  margin: auto;
+  margin: 0 50px;
+  margin-top: 60px;
+  min-height: 90vh;
+  padding: 24px;
+}
+
+.topNav {
+  background: transparent;
+  position: fixed;
+  width: 100%;
+}

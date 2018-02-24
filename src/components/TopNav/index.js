@@ -1,5 +1,6 @@
+import { Menu } from "antd";
 import React, { Component } from "react";
-import { Menu, Icon } from "antd";
+import { Link } from "react-router-dom";
 
 class TopNav extends Component {
   state = {
@@ -18,9 +19,15 @@ class TopNav extends Component {
         selectedKeys={[this.state.current]}
         mode="horizontal"
       >
-        <Menu.Item>Home</Menu.Item>
-        <Menu.Item>Graph</Menu.Item>
-        <Menu.Item>About</Menu.Item>
+        <Menu.Item>
+          <Link to="/home">Home</Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link to="/graph">Graph</Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link to="/about">About</Link>
+        </Menu.Item>
       </Menu>
     );
   }
