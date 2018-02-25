@@ -2,14 +2,34 @@
 
 .content {
   background-color: white;
-  margin: auto;
-  margin: 0 15%;
+  margin-left: auto;
+  margin-right: auto;
   min-height: 90vh;
   padding: 24px;
+  width: 100%;
+
+  max-width: 40vw;
 }
 
 .topNav {
   background: transparent;
-  margin: 0 15%;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
+  width: 100%;
+  max-width: 40vw;
+}
+
+@media only screen and (max-width: 992px) {
+  .content,
+  .topNav {
+    max-width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .content,
+  .topNav {
+    max-width: 100vw;
+  }
 }

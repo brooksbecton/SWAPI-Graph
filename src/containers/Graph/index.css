@@ -1,4 +1,9 @@
 .graphContainer {
-  width: 100%;
+  cursor: pointer;
   height: 50vh;
+  width: 100%;
+}
+
+#mynetwork {
+  height: 100%;
 }

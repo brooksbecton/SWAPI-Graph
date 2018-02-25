@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Row, Col } from "antd";
 
 import "./index.css";
-import hero from "./images/main_hero.png";
+import hero from "./images/main_hero.webp";
 const Home = () => {
   return (
     <div>
@@ -15,7 +15,7 @@ const Home = () => {
           alt="Storm trooper action figure look off to the right, black and white"
         />
       </Row>
-      <Row className="triSection">
+      <Row gutter={16} className="triSection">
         <Col md={8} sm={24}>
           <h2>Graph</h2>
           <p>

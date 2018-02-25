@@ -1,3 +1,4 @@
+import { Button } from "antd";
 import localforage from "localforage";
 import React, { Component } from "react";
 import vis from "vis";
@@ -132,13 +133,29 @@ class App extends Component {
   };
 
   render() {
-    return this.state.nodes.length > 0 ? (
-      <div className="graphContainer">
-        <button onClick={() => this.clearCache()}>Clear Cache</button>
-        <div id="mynetwork" />
+    return (
+      <div>
+        <h1>Graph</h1>
+        <p>
+          <em>You can drag and drop nodes or drag the graph around</em>
+        </p>
+        <div className="graphContainer">
+          {this.state.nodes.length > 0 ? (
+            <div id="mynetwork" />
+          ) : (
+            <p>Loading</p>
+          )}
+        </div>
+        <Button onClick={() => this.clearCache()}>Clear Cache</Button>{" "}
+        <a href="#helpCache">?</a>
+        <h2 id="helpCache">What is clearing cache?</h2>
+        <p>
+          The graph pulls a lot of data to generate the graph. To help with load
+          times and network usage, we cache the results of the pull. If you want
+          to pull the latest version of the SWAPI, you can clear the cache and
+          the the app will pull down the necessary data and re cache it.
+        </p>
       </div>
-    ) : (
-      <p>Loading</p>
     );
   }
 }
