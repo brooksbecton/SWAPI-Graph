@@ -133,7 +133,7 @@ class App extends Component {
 
   render() {
     return this.state.nodes.length > 0 ? (
-      <div>
+      <div className="graphContainer">
         <button onClick={() => this.clearCache()}>Clear Cache</button>
         <div id="mynetwork" />
       </div>
