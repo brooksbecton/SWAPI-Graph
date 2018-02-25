@@ -1,11 +1,13 @@
 [ignore]
+.*/node_modules/.*
 
 [include]
+./src/**
 
 [libs]
-
-[lints]
+flow-typed
 
 [options]
-
-[strict]
+module.file_ext=.js
+module.ignore_non_literal_requires=true
+suppress_comment= \\(.\\|\n\\)*\\$FlowIgnore

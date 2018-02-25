@@ -1,16 +1,21 @@
-import { Button } from "antd";
+import { Button, Tabs } from "antd";
 import localforage from "localforage";
 import React, { Component } from "react";
 import vis from "vis";
 
 import "./index.css";
+import FiltersTab from "./containers/FiltersTab";
 import SwapiGraphInterface from "./../../lib/SwapiGraphInterface";
 
-class App extends Component {
+const TabPane = Tabs.TabPane;
+
+class Graph extends Component {
   constructor() {
     super();
 
     this.state = {
+      cacheEmpty: false,
+      knownCollections: [],
       nodes: [],
       edges: []
     };
@@ -19,6 +24,7 @@ class App extends Component {
   componentDidMount = () => {
     // localforage.removeItem("swapiData");
     this.getNodes();
+    this.getKnownCollections();
   };
 
   clearCache = () => {
@@ -132,6 +138,11 @@ class App extends Component {
     this.drawGraph();
   };
 
+  getKnownCollections = async () => {
+    const knownCollections = await SwapiGraphInterface().getKnownCollection();
+    this.setState({ knownCollections });
+  };
+
   render() {
     return (
       <div>
@@ -139,13 +150,20 @@ class App extends Component {
         <p>
           <em>You can drag and drop nodes or drag the graph around</em>
         </p>
-        <div className="graphContainer">
-          {this.state.nodes.length > 0 ? (
-            <div id="mynetwork" />
-          ) : (
-            <p>Loading</p>
-          )}
-        </div>
+        <Tabs>
+          <TabPane tab="Results" key="1">
+            <div className="graphContainer">
+              {this.state.nodes.length > 0 ? (
+                <div id="mynetwork" />
+              ) : (
+                <p>Loading</p>
+              )}
+            </div>
+          </TabPane>
+          <TabPane tab="Filters" key="2">
+            <FiltersTab collections={this.state.knownCollections} />
+          </TabPane>
+        </Tabs>
         <Button onClick={() => this.clearCache()}>Clear Cache</Button>{" "}
         <a href="#helpCache">?</a>
         <h2 id="helpCache">What is clearing cache?</h2>
@@ -160,4 +178,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Graph;

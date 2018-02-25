@@ -48,6 +48,8 @@ export default (url: string, data: ?{}) => {
       return nodes;
     },
 
+    getKnownCollection: async () => await getKnownCollection(),
+
     addEdges: async () => {
       if (knownSwapiCollections.length === 0) {
         knownSwapiCollections = await getKnownCollection();

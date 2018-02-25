@@ -43,7 +43,7 @@ class TopNav extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Icon style={{ marginRight: 0 }} type="github" />
+            <Icon style={{ marginRight: 0, fontSize: "1.5em" }} type="github" />
           </a>
         </Menu.Item>
       </Menu>
