@@ -1,6 +1,6 @@
 # SWAPI Graph
 
-This is a web site for visualising the data found in the [SWAPI](//swapi.co/) It will feature a graph that can be filtered down by data collection found in the API.
+This is a web site for visualizing the data found in the [SWAPI](//swapi.co/) It will feature a graph that can be filtered down by data collection found in the API.
 
 ## Problems?
 
