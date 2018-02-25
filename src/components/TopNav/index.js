@@ -1,11 +1,21 @@
 import { Menu } from "antd";
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 class TopNav extends Component {
   state = {
-    current: "mail"
+    current: ""
   };
+
+  componentDidMount() {
+    this.setState({
+      current: this.props.location.pathname.slice(
+        1,
+        this.props.location.pathname.length
+      )
+    });
+  }
+
   handleClick = e => {
     this.setState({
       current: e.key
@@ -18,13 +28,13 @@ class TopNav extends Component {
         selectedKeys={[this.state.current]}
         mode="horizontal"
       >
-        <Menu.Item>
+        <Menu.Item key="home">
           <Link to="/home">Home</Link>
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item key="graph">
           <Link to="/graph">Graph</Link>
         </Menu.Item>
-        <Menu.Item>
+        <Menu.Item key="about">
           <Link to="/about">About</Link>
         </Menu.Item>
       </Menu>
@@ -32,4 +42,4 @@ class TopNav extends Component {
   }
 }
 
-export default TopNav;
+export default withRouter(TopNav);
