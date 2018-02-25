@@ -25,6 +25,7 @@ const Home = () => {
             <a
               href="https://github.com/brooksbecton/SWAPI-Graph"
               target="_blank"
+              rel="noopener noreferrer"
             >
               repo
             </a>
@@ -34,7 +35,11 @@ const Home = () => {
           <h2>About</h2>
           <p>
             The graph shows all of the connections and information from the{" "}
-            <a href="https://swapi.co/" target="_blank">
+            <a
+              href="https://swapi.co/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               SWAPI
             </a>. They have a ton of fascinating information, and this app
             brings that information into a intuitive user interface.
@@ -56,13 +61,9 @@ const Home = () => {
             <h3>What is this?</h3>
             <p>
               This allows users to see the kinds of data and relantionships that
-              the{" "}
-              <a href="https://swapi.co/" target="_blank">
-                SWAPI
-              </a>{" "}
-              has. Instead of making API calls you can filter the graph down to
-              checkout different relationships based on films, people, or any
-              other collection that the SWAPI offers
+              the SWAPI has. Instead of making API calls you can filter the
+              graph down to checkout different relationships based on films,
+              people, or any other collection that the SWAPI offers
             </p>
           </Col>
           <Col span={12}>
