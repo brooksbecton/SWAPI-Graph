@@ -14,7 +14,7 @@ const { Header, Content } = Layout;
 
 const App = () => {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Layout>
         <Header className="topNav">
           <TopNav />
