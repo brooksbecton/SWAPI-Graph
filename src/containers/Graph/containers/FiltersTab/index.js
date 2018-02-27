@@ -61,16 +61,30 @@ export default class FiltersTab extends Component<Props, State> {
               >
                 {this.props.collections[collectionName] &&
                 this.props.collections[collectionName].length ? (
-                  this.props.collections[collectionName].map(collectionInfo => (
-                    <Switch
-                      key={collectionInfo.label}
-                      checkedChildren={collectionInfo.label}
-                      unCheckedChildren={collectionInfo.label}
-                      onChange={isSwitched =>
-                        this.handleSwitchChange(isSwitched, collectionInfo)
+                  this.props.collections[collectionName]
+                    .sort(function(a, b) {
+                      var labelA = a.label.toUpperCase(); // ignore upper and lowercase
+                      var labelB = b.label.toUpperCase(); // ignore upper and lowercase
+                      if (labelA < labelB) {
+                        return -1;
                       }
-                    />
-                  ))
+                      if (labelA > labelB) {
+                        return 1;
+                      }
+
+                      // labels must be equal
+                      return 0;
+                    })
+                    .map(collectionInfo => (
+                      <Switch
+                        key={collectionInfo.label}
+                        checkedChildren={collectionInfo.label}
+                        unCheckedChildren={collectionInfo.label}
+                        onChange={isSwitched =>
+                          this.handleSwitchChange(isSwitched, collectionInfo)
+                        }
+                      />
+                    ))
                 ) : (
                   <Icon type="loading" />
                 )}
