@@ -15,9 +15,22 @@ type Props = {
   removeNodes: (collection: {}) => null
 };
 
-export default class FiltersTab extends Component<Props> {
+type State = {
+  activeKey: string
+};
+
+export default class FiltersTab extends Component<Props, State> {
+  constructor() {
+    super();
+
+    this.state = {
+      activeKey: "films"
+    };
+  }
+
   componentDidMount() {
     this.props.getCollectionInfo("films");
+    this.setState({ activeKey: "films" });
   }
 
   handleSwitchChange = (isSwitched: boolean, collection: {}) => {
@@ -32,17 +45,19 @@ export default class FiltersTab extends Component<Props> {
     return (
       <div className="filterContainer">
         <Tabs
-          defaultActiveKey="films"
-          onChange={collection => this.props.getCollectionInfo(collection)}
+          activeKey={this.state.activeKey}
+          onChange={collection => {
+            this.props.getCollectionInfo(collection);
+            this.setState({ activeKey: collection });
+          }}
           tabPosition="left"
-          style={{ overflowY: "auto" }}
+          style={{ height: "100%", overflowY: "auto" }}
         >
           {this.props.knownCollections.map((collectionName, i) => {
             return (
               <TabPane
                 tab={capitilizeFirstLetter(collectionName)}
                 key={collectionName}
-                style={{ overflowY: "auto" }}
               >
                 {this.props.collections[collectionName] &&
                 this.props.collections[collectionName].length ? (

@@ -1,4 +1,4 @@
-import { Button, Tabs } from "antd";
+import { Tabs } from "antd";
 import localforage from "localforage";
 import React, { Component } from "react";
 import vis from "vis";
@@ -195,15 +195,6 @@ class Graph extends Component {
           <em>You can drag and drop nodes or drag the graph around</em>
         </p>
         <Tabs>
-          <TabPane tab="Results" key="graph">
-            <div className="graphContainer">
-              {this.state.nodes.length >= 0 ? (
-                <div id="mynetwork" />
-              ) : (
-                <p>Loading</p>
-              )}
-            </div>
-          </TabPane>
           <TabPane tab="Filters" key="filters">
             <FiltersTab
               knownCollections={this.state.knownCollections}
@@ -213,9 +204,18 @@ class Graph extends Component {
               removeNodes={this.removeNodes}
             />
           </TabPane>
+          <TabPane tab="Results" key="graph" forceRender>
+            <div className="graphContainer">
+              {this.state.nodes.length > 0 ? (
+                <div id="mynetwork" />
+              ) : (
+                <p>I find you lack of filters disturbing</p>
+              )}
+            </div>
+          </TabPane>
         </Tabs>
-        <Button onClick={() => this.clearCache()}>Clear Cache</Button>{" "}
-        <Button onClick={() => this.clearGraph()}>Reset Graph</Button>{" "}
+        {/* <Button onClick={() => this.clearCache()}>Clear Cache</Button>{" "}
+        <Button onClick={() => this.clearGraph()}>Reset Graph</Button>{" "} 
         <a href="#helpCache">?</a>
         <h2 id="helpCache">What is clearing cache?</h2>
         <p>
@@ -223,7 +223,7 @@ class Graph extends Component {
           times and network usage, we cache the results of the pull. If you want
           to pull the latest version of the SWAPI, you can clear the cache and
           the the app will pull down the necessary data and re cache it.
-        </p>
+        </p>*/}
       </div>
     );
   }
