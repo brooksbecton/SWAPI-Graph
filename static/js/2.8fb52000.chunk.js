@@ -1,0 +1,2 @@
+webpackJsonp([2],{876:function(e,t,l){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=l(0),o=l.n(n),a=function(){return o.a.createElement("div",null,o.a.createElement("h1",null,"About"),o.a.createElement("h2",null,"Photo Credits"),"All photos from Rober Gonz\xe1lez at"," ",o.a.createElement("a",{href:"https://unsplash.com/photos/ShXbeohihGo"},"Unsplash"))};t.default=a}});
+//# sourceMappingURL=2.8fb52000.chunk.js.map
