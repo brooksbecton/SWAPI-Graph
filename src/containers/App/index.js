@@ -1,14 +1,31 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Layout } from "antd";
+import React from "react";
+import Loadable from "react-loadable";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "./index.css";
-
-import About from "./../About";
-import Graph from "./../Graph";
-import Home from "./../Home";
-
 import TopNav from "./../../components/TopNav";
+
+const AsyncAbout = Loadable({
+  loader: () => import("./../About"),
+  loading() {
+    return <div>Loading...</div>;
+  }
+});
+
+const AsyncHome = Loadable({
+  loader: () => import("./../Home"),
+  loading() {
+    return <div>Loading...</div>;
+  }
+});
+
+const AsyncGraph = Loadable({
+  loader: () => import("./../Graph"),
+  loading() {
+    return <div>Loading...</div>;
+  }
+});
 
 const { Header, Content } = Layout;
 
@@ -20,10 +37,10 @@ const App = () => {
           <TopNav />
         </Header>
         <Content className="content">
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/graph" component={Graph} />
+          <Route exact path="/" component={AsyncHome} />
+          <Route exact path="/about" component={AsyncAbout} />
+          <Route exact path="/home" component={AsyncHome} />
+          <Route exact path="/graph" component={AsyncGraph} />
         </Content>
       </Layout>
     </Router>
