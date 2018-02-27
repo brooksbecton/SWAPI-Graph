@@ -20,6 +20,25 @@ export default (url: string, data: ?{}) => {
     return knownSwapiCollections;
   };
 
+  const getNodesEdges = async (node: {
+    url: string,
+    [collectionName: String]: Array<string>
+  }) => {
+    if (knownSwapiCollections.length === 0) {
+      knownSwapiCollections = await getKnownCollection();
+    }
+
+    let newEdges: Array<{ from: string, to: string }> = [];
+    knownSwapiCollections.forEach(collectionName => {
+      if (node.hasOwnProperty(collectionName)) {
+        node[collectionName].forEach(url => {
+          newEdges = newEdges.concat({ from: node.url, to: url });
+        });
+      }
+    });
+    return newEdges;
+  };
+
   return {
     /**
      * Gets all items from a SWAPI collection and
@@ -70,6 +89,8 @@ export default (url: string, data: ?{}) => {
         });
       });
       return edges;
-    }
+    },
+
+    getNodesEdges: getNodesEdges
   };
 };

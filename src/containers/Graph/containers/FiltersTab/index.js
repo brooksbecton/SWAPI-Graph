@@ -10,13 +10,23 @@ const TabPane = Tabs.TabPane;
 type Props = {
   collections: {},
   knownCollections: string[],
-  getCollectionInfo: (x: string) => null
+  getCollectionInfo: (x: string) => null,
+  setNodes: (collection: {}) => null,
+  removeNodes: (collection: {}) => null
 };
 
 export default class FiltersTab extends Component<Props> {
   componentDidMount() {
     this.props.getCollectionInfo("films");
   }
+
+  handleSwitchChange = (isSwitched: boolean, collection: {}) => {
+    if (isSwitched) {
+      this.props.setNodes(collection);
+    } else {
+      this.props.removeNodes(collection);
+    }
+  };
 
   render() {
     return (
@@ -41,6 +51,9 @@ export default class FiltersTab extends Component<Props> {
                       key={collectionInfo.label}
                       checkedChildren={collectionInfo.label}
                       unCheckedChildren={collectionInfo.label}
+                      onChange={isSwitched =>
+                        this.handleSwitchChange(isSwitched, collectionInfo)
+                      }
                     />
                   ))
                 ) : (

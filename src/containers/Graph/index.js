@@ -2,7 +2,7 @@ import { Button, Tabs } from "antd";
 import localforage from "localforage";
 import React, { Component } from "react";
 import vis from "vis";
-
+import differenceby from "lodash.differenceby";
 import "./index.css";
 import FiltersTab from "./containers/FiltersTab";
 import SwapiGraphInterface from "./../../lib/SwapiGraphInterface";
@@ -23,10 +23,14 @@ class Graph extends Component {
   }
 
   componentDidMount = () => {
-    // localforage.removeItem("swapiData");
-    // this.getNodes();
     this.getKnownCollections();
   };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.nodes !== prevState.nodes) {
+      this.drawGraph();
+    }
+  }
 
   clearCache = () => {
     localforage.removeItem("swapiData");
@@ -38,7 +42,6 @@ class Graph extends Component {
 
   clearGraph = () => {
     this.setState({ nodes: [], edges: [] });
-    this.drawGraph();
   };
 
   drawGraph = () => {
@@ -169,6 +172,21 @@ class Graph extends Component {
     this.setState({ knownCollections });
   };
 
+  removeNodes = async node => {
+    this.setState({
+      nodes: differenceby(this.state.nodes, [node], "url")
+    });
+  };
+
+  setNodes = async node => {
+    const newEdges = await SwapiGraphInterface().getNodesEdges(node);
+
+    this.setState({
+      nodes: this.state.nodes.concat(node),
+      edges: this.state.edges.concat(newEdges)
+    });
+  };
+
   render() {
     return (
       <div>
@@ -191,6 +209,8 @@ class Graph extends Component {
               knownCollections={this.state.knownCollections}
               collections={this.state.collections}
               getCollectionInfo={this.getCollectionInfo}
+              setNodes={this.setNodes}
+              removeNodes={this.removeNodes}
             />
           </TabPane>
         </Tabs>
