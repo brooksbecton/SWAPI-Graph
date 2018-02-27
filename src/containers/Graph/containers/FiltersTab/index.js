@@ -1,29 +1,54 @@
 // @flow
 
 import React, { Component } from "react";
-import { Switch, Tabs } from "antd";
+import { Icon, Switch, Tabs } from "antd";
 import capitilizeFirstLetter from "./../../../../lib/capitilizeFirstLetter";
 import "./index.css";
 
 const TabPane = Tabs.TabPane;
+
 type Props = {
-  collections: string[]
+  collections: {},
+  knownCollections: string[],
+  getCollectionInfo: (x: string) => null
 };
 
 export default class FiltersTab extends Component<Props> {
+  componentDidMount() {
+    this.props.getCollectionInfo("films");
+  }
+
   render() {
     return (
       <div className="filterContainer">
-        {" "}
-        <Tabs tabPosition="left">
-          {this.props.collections.map((collection, i) => (
-            <TabPane tab={capitilizeFirstLetter(collection)} key={i}>
-              <Switch
-                checkedChildren="A New Hope"
-                unCheckedChildren="A New Hope"
-              />
-            </TabPane>
-          ))}
+        <Tabs
+          defaultActiveKey="films"
+          onChange={collection => this.props.getCollectionInfo(collection)}
+          tabPosition="left"
+          style={{ overflowY: "auto" }}
+        >
+          {this.props.knownCollections.map((collectionName, i) => {
+            return (
+              <TabPane
+                tab={capitilizeFirstLetter(collectionName)}
+                key={collectionName}
+                style={{ overflowY: "auto" }}
+              >
+                {this.props.collections[collectionName] &&
+                this.props.collections[collectionName].length ? (
+                  this.props.collections[collectionName].map(collectionInfo => (
+                    <Switch
+                      key={collectionInfo.label}
+                      checkedChildren={collectionInfo.label}
+                      unCheckedChildren={collectionInfo.label}
+                    />
+                  ))
+                ) : (
+                  <Icon type="loading" />
+                )}
+              </TabPane>
+            );
+          })}
         </Tabs>
       </div>
     );

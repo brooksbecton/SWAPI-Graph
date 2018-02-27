@@ -15,6 +15,7 @@ class Graph extends Component {
 
     this.state = {
       cacheEmpty: false,
+      collections: {},
       knownCollections: [],
       nodes: [],
       edges: []
@@ -23,14 +24,21 @@ class Graph extends Component {
 
   componentDidMount = () => {
     // localforage.removeItem("swapiData");
-    this.getNodes();
+    // this.getNodes();
     this.getKnownCollections();
   };
 
   clearCache = () => {
     localforage.removeItem("swapiData");
+
+    this.state.knownCollections.forEach(collectionName => {
+      localforage.removeItem(collectionName);
+    });
+  };
+
+  clearGraph = () => {
     this.setState({ nodes: [], edges: [] });
-    this.getNodes();
+    this.drawGraph();
   };
 
   drawGraph = () => {
@@ -56,6 +64,24 @@ class Graph extends Component {
 
     // initialize your network!
     new vis.Network(container, data, options);
+  };
+
+  getCollectionInfo = async (collectionName: string) => {
+    let collectionNodes = await localforage.getItem(collectionName);
+    if (!collectionNodes) {
+      const collectionInterface = SwapiGraphInterface();
+      collectionNodes = await collectionInterface.getCollectionItems(
+        collectionName
+      );
+      localforage.setItem(collectionName, collectionNodes);
+    }
+
+    this.setState(prevState => ({
+      collections: {
+        ...prevState.collections,
+        [collectionName]: collectionNodes
+      }
+    }));
   };
 
   getNodes = async () => {
@@ -151,20 +177,25 @@ class Graph extends Component {
           <em>You can drag and drop nodes or drag the graph around</em>
         </p>
         <Tabs>
-          <TabPane tab="Results" key="1">
+          <TabPane tab="Results" key="graph">
             <div className="graphContainer">
-              {this.state.nodes.length > 0 ? (
+              {this.state.nodes.length >= 0 ? (
                 <div id="mynetwork" />
               ) : (
                 <p>Loading</p>
               )}
             </div>
           </TabPane>
-          <TabPane tab="Filters" key="2">
-            <FiltersTab collections={this.state.knownCollections} />
+          <TabPane tab="Filters" key="filters">
+            <FiltersTab
+              knownCollections={this.state.knownCollections}
+              collections={this.state.collections}
+              getCollectionInfo={this.getCollectionInfo}
+            />
           </TabPane>
         </Tabs>
         <Button onClick={() => this.clearCache()}>Clear Cache</Button>{" "}
+        <Button onClick={() => this.clearGraph()}>Reset Graph</Button>{" "}
         <a href="#helpCache">?</a>
         <h2 id="helpCache">What is clearing cache?</h2>
         <p>

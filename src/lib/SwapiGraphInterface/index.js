@@ -25,8 +25,13 @@ export default (url: string, data: ?{}) => {
      * Gets all items from a SWAPI collection and
      * adds it to 'nodes' property
      */
-    getCollectionItems: async () => {
-      let targetUrl: string = url;
+    getCollectionItems: async (collectionName: string) => {
+      let targetUrl: string;
+      if (collectionName) {
+        targetUrl = swapiBaseUrl + collectionName;
+      } else {
+        targetUrl = url;
+      }
       while (targetUrl !== null) {
         const resp = await fetch(targetUrl);
         const { next, results } = await resp.json();
