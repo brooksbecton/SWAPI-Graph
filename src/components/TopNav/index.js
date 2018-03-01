@@ -8,11 +8,12 @@ class TopNav extends Component {
   };
 
   componentDidMount() {
+    const currentPage = this.props.location.pathname.slice(
+      1,
+      this.props.location.pathname.length
+    );
     this.setState({
-      current: this.props.location.pathname.slice(
-        1,
-        this.props.location.pathname.length
-      )
+      current: currentPage.length > 0 ? currentPage : "home"
     });
   }
 
@@ -39,6 +40,7 @@ class TopNav extends Component {
         </Menu.Item>
         <Menu.Item style={{ float: "right" }}>
           <a
+            aria-label="Brooks Becton Github Profile"
             href="https://github.com/brooksbecton/SWAPI-Graph"
             target="_blank"
             rel="noopener noreferrer"
