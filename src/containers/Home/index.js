@@ -1,19 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Row, Col } from "antd";
+import picture from "picturefill";
 
 import "./index.css";
-import hero from "./images/main_hero.webp";
+import hero_webp from "./images/main_hero.webp";
+import hero_png from "./images/main_hero.png";
+
 const Home = () => {
   return (
     <div>
       <h1>Home</h1>
       <Row>
-        <img
-          className="mainHero"
-          src={hero}
-          alt="Storm trooper action figure look off to the right, black and white"
-        />
+        <picture className="mainHero">
+          <source srcset={hero_webp} type="image/webp" />
+          <img
+            srcset={hero_png}
+            alt="Storm trooper action figure look off to the right, black and white"
+          />
+        </picture>
       </Row>
       <Row gutter={16} className="triSection">
         <Col md={8} sm={24}>

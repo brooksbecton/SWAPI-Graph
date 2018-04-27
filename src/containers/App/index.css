@@ -1,37 +1,40 @@
 a {
-  color: #0054a3;
+    color: #0054a3;
 }
 
 .content {
-  background-color: white;
-  margin-left: auto;
-  margin-right: auto;
-  min-height: 90vh;
-  padding: 24px;
-  width: 100%;
-
-  max-width: 40vw;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 90vh;
+    padding: 24px;
+    width: 100%;
+    max-width: 40vw;
 }
 
 .topNav {
-  background: transparent;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
-  width: 100%;
-  max-width: 40vw;
+    background: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: 100%;
+    max-width: 40vw;
 }
 
 @media only screen and (max-width: 992px) {
-  .content,
-  .topNav {
-    max-width: 80vw;
-  }
+    .content,
+    .topNav {
+        max-width: 80vw;
+    }
 }
 
 @media only screen and (max-width: 768px) {
-  .content,
-  .topNav {
-    max-width: 100vw;
-  }
+    .content,
+    .topNav {
+        max-width: 100vw;
+    }
+}
+
+img {
+    width: 100%;
 }

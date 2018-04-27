@@ -8,6 +8,7 @@
         "flow-bin": "^0.66.0",
         "localforage": "^1.5.7",
         "lodash.differenceby": "^4.8.0",
+        "picturefill": "^3.0.2",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
         "react-loadable": "^5.3.1",
