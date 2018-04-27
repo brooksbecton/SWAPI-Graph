@@ -2,9 +2,9 @@ import { Layout } from "antd";
 import React from "react";
 import Loadable from "react-loadable";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
 import "./index.css";
 import TopNav from "./../../components/TopNav";
+import OfflineChecker from "./../../components/OfflineChecker";
 
 const AsyncAbout = Loadable({
   loader: () => import("./../About"),
@@ -33,6 +33,7 @@ const App = () => {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <Layout>
+        <OfflineChecker />
         <Header className="topNav">
           <TopNav />
         </Header>
