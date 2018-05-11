@@ -13,9 +13,9 @@ const Home = () => {
       <h1>Home</h1>
       <Row>
         <picture className="mainHero">
-          <source srcset={hero_webp} type="image/webp" />
+          <source srcSet={hero_webp} type="image/webp" />
           <img
-            srcset={hero_png}
+            srcSet={hero_png}
             alt="Storm trooper action figure look off to the right, black and white"
           />
         </picture>
