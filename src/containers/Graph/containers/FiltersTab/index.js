@@ -1,7 +1,6 @@
 // @flow
-
 import React, { Component } from "react";
-import { Icon, Switch, Tabs } from "antd";
+import { Button, Icon, Input, Switch, Tabs } from "antd";
 import capitilizeFirstLetter from "./../../../../lib/capitilizeFirstLetter";
 import "./index.css";
 
@@ -16,7 +15,8 @@ type Props = {
 };
 
 type State = {
-  activeKey: string
+  activeKey: string,
+  searchQuery: string
 };
 
 export default class FiltersTab extends Component<Props, State> {
@@ -24,7 +24,8 @@ export default class FiltersTab extends Component<Props, State> {
     super();
 
     this.state = {
-      activeKey: "films"
+      activeKey: "films",
+      searchQuery: ""
     };
   }
 
@@ -44,6 +45,24 @@ export default class FiltersTab extends Component<Props, State> {
   render() {
     return (
       <div className="filterContainer">
+        <Input.Group>
+          <Input
+            addonAfter={
+              <Button
+                onClick={() => this.setState({ searchQuery: "" })}
+                disabled={this.state.searchQuery === ""}
+                type="primary"
+                shape="circle"
+                icon="close"
+                size="small"
+              />
+            }
+            className="search"
+            placeholder="Search"
+            onChange={e => this.setState({ searchQuery: e.target.value })}
+            value={this.state.searchQuery}
+          />
+        </Input.Group>
         <Tabs
           activeKey={this.state.activeKey}
           onChange={collection => {
@@ -51,7 +70,7 @@ export default class FiltersTab extends Component<Props, State> {
             this.setState({ activeKey: collection });
           }}
           tabPosition="left"
-          style={{ height: "100%", overflowY: "auto" }}
+          style={{ height: "100%", overflowY: "auto", paddingTop: "20px" }}
         >
           {this.props.knownCollections.map((collectionName, i) => {
             return (
@@ -62,6 +81,17 @@ export default class FiltersTab extends Component<Props, State> {
                 {this.props.collections[collectionName] &&
                 this.props.collections[collectionName].length ? (
                   this.props.collections[collectionName]
+                    .filter(({ label }) => {
+                      if (this.state.searchQuery !== "") {
+                        return (
+                          label
+                            .toLowerCase()
+                            .indexOf(this.state.searchQuery.toLowerCase()) >= 0
+                        );
+                      } else {
+                        return true;
+                      }
+                    })
                     .sort(function(a, b) {
                       var labelA = a.label.toUpperCase(); // ignore upper and lowercase
                       var labelB = b.label.toUpperCase(); // ignore upper and lowercase

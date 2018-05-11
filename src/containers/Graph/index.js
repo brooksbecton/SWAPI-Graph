@@ -191,7 +191,6 @@ class Graph extends Component {
     return (
       <div>
         <h1>Graph</h1>
-
         <Tabs>
           <TabPane tab="Filters" key="filters">
             <FiltersTab
