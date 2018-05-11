@@ -191,9 +191,7 @@ class Graph extends Component {
     return (
       <div>
         <h1>Graph</h1>
-        <p>
-          <em>You can drag and drop nodes or drag the graph around</em>
-        </p>
+
         <Tabs>
           <TabPane tab="Filters" key="filters">
             <FiltersTab
@@ -212,6 +210,25 @@ class Graph extends Component {
                 <p>I find you lack of filters disturbing</p>
               )}
             </div>
+          </TabPane>
+          <TabPane tab="Help" key="help" forceRender>
+            <h2>Creating a Graph</h2>
+            <p>
+              You can add different nodes to the graph by turning on different
+              toggles in the <em>Filters</em> tab. Once you turn these on, a
+              graph will be made on the <em>Graph</em> tab.{" "}
+            </p>
+            <h2>Viewing the Graph</h2>
+            <p>
+              You can view your generated graph by clicking on the{" "}
+              <em>Graph</em> tab. You must have toggled something for the graph
+              to have generated.
+            </p>
+            <p>
+              If you want to zoom in on a certain part of a graph, you can
+              scroll or pinch closer into the graph. You can also drag nodes
+              around to group things together as needed.{" "}
+            </p>
           </TabPane>
         </Tabs>
         {/* <Button onClick={() => this.clearCache()}>Clear Cache</Button>{" "}
