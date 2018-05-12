@@ -1,0 +1,849 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Graph renders 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Graph />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h1>
+          Graph
+</h1>,
+        <Tabs
+          hideAdd={false}
+          prefixCls="ant-tabs"
+>
+          <TabPane
+                    placeholder={null}
+                    tab="Filters"
+          >
+                    <FiltersTab
+                              collections={Object {}}
+                              getCollectionInfo={[Function]}
+                              knownCollections={Array []}
+                              removeNodes={[Function]}
+                              setNodes={[Function]}
+                    />
+          </TabPane>
+          <TabPane
+                    forceRender={true}
+                    placeholder={null}
+                    tab="Results"
+          >
+                    <div
+                              className="graphContainer"
+                    >
+                              <p>
+                                        I find you lack of filters disturbing
+                              </p>
+                    </div>
+          </TabPane>
+          <TabPane
+                    forceRender={true}
+                    placeholder={null}
+                    tab="Help"
+          >
+                    <h2>
+                              Creating a Graph
+                    </h2>
+                    <p>
+                              You can add different nodes to the graph by turning on different toggles in the 
+                              <em>
+                                        Filters
+                              </em>
+                               tab. Once you turn these on, a graph will be made on the 
+                              <em>
+                                        Graph
+                              </em>
+                               tab.
+                               
+                    </p>
+                    <h2>
+                              Viewing the Graph
+                    </h2>
+                    <p>
+                              You can view your generated graph by clicking on the
+                               
+                              <em>
+                                        Graph
+                              </em>
+                               tab. You must have toggled something for the graph to have generated.
+                    </p>
+                    <p>
+                              If you want to zoom in on a certain part of a graph, you can scroll or pinch closer into the graph. You can also drag nodes around to group things together as needed.
+                               
+                    </p>
+          </TabPane>
+</Tabs>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Graph",
+        },
+        "ref": null,
+        "rendered": "Graph",
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <TabPane
+              placeholder={null}
+              tab="Filters"
+>
+              <FiltersTab
+                            collections={Object {}}
+                            getCollectionInfo={[Function]}
+                            knownCollections={Array []}
+                            removeNodes={[Function]}
+                            setNodes={[Function]}
+              />
+</TabPane>,
+            <TabPane
+              forceRender={true}
+              placeholder={null}
+              tab="Results"
+>
+              <div
+                            className="graphContainer"
+              >
+                            <p>
+                                          I find you lack of filters disturbing
+                            </p>
+              </div>
+</TabPane>,
+            <TabPane
+              forceRender={true}
+              placeholder={null}
+              tab="Help"
+>
+              <h2>
+                            Creating a Graph
+              </h2>
+              <p>
+                            You can add different nodes to the graph by turning on different toggles in the 
+                            <em>
+                                          Filters
+                            </em>
+                             tab. Once you turn these on, a graph will be made on the 
+                            <em>
+                                          Graph
+                            </em>
+                             tab.
+                             
+              </p>
+              <h2>
+                            Viewing the Graph
+              </h2>
+              <p>
+                            You can view your generated graph by clicking on the
+                             
+                            <em>
+                                          Graph
+                            </em>
+                             tab. You must have toggled something for the graph to have generated.
+              </p>
+              <p>
+                            If you want to zoom in on a certain part of a graph, you can scroll or pinch closer into the graph. You can also drag nodes around to group things together as needed.
+                             
+              </p>
+</TabPane>,
+          ],
+          "hideAdd": false,
+          "prefixCls": "ant-tabs",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "filters",
+            "nodeType": "class",
+            "props": Object {
+              "children": <FiltersTab
+                collections={Object {}}
+                getCollectionInfo={[Function]}
+                knownCollections={Array []}
+                removeNodes={[Function]}
+                setNodes={[Function]}
+/>,
+              "placeholder": null,
+              "tab": "Filters",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "collections": Object {},
+                "getCollectionInfo": [Function],
+                "knownCollections": Array [],
+                "removeNodes": [Function],
+                "setNodes": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "graph",
+            "nodeType": "class",
+            "props": Object {
+              "children": <div
+                className="graphContainer"
+>
+                <p>
+                                I find you lack of filters disturbing
+                </p>
+</div>,
+              "forceRender": true,
+              "placeholder": null,
+              "tab": "Results",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <p>
+                  I find you lack of filters disturbing
+</p>,
+                "className": "graphContainer",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "I find you lack of filters disturbing",
+                },
+                "ref": null,
+                "rendered": "I find you lack of filters disturbing",
+                "type": "p",
+              },
+              "type": "div",
+            },
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "help",
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <h2>
+                  Creating a Graph
+</h2>,
+                <p>
+                  You can add different nodes to the graph by turning on different toggles in the 
+                  <em>
+                                    Filters
+                  </em>
+                   tab. Once you turn these on, a graph will be made on the 
+                  <em>
+                                    Graph
+                  </em>
+                   tab.
+                   
+</p>,
+                <h2>
+                  Viewing the Graph
+</h2>,
+                <p>
+                  You can view your generated graph by clicking on the
+                   
+                  <em>
+                                    Graph
+                  </em>
+                   tab. You must have toggled something for the graph to have generated.
+</p>,
+                <p>
+                  If you want to zoom in on a certain part of a graph, you can scroll or pinch closer into the graph. You can also drag nodes around to group things together as needed.
+                   
+</p>,
+              ],
+              "forceRender": true,
+              "placeholder": null,
+              "tab": "Help",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Creating a Graph",
+                },
+                "ref": null,
+                "rendered": "Creating a Graph",
+                "type": "h2",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "You can add different nodes to the graph by turning on different toggles in the ",
+                    <em>
+                      Filters
+</em>,
+                    " tab. Once you turn these on, a graph will be made on the ",
+                    <em>
+                      Graph
+</em>,
+                    " tab.",
+                    " ",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "You can add different nodes to the graph by turning on different toggles in the ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Filters",
+                    },
+                    "ref": null,
+                    "rendered": "Filters",
+                    "type": "em",
+                  },
+                  " tab. Once you turn these on, a graph will be made on the ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Graph",
+                    },
+                    "ref": null,
+                    "rendered": "Graph",
+                    "type": "em",
+                  },
+                  " tab.",
+                  " ",
+                ],
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Viewing the Graph",
+                },
+                "ref": null,
+                "rendered": "Viewing the Graph",
+                "type": "h2",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "You can view your generated graph by clicking on the",
+                    " ",
+                    <em>
+                      Graph
+</em>,
+                    " tab. You must have toggled something for the graph to have generated.",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "You can view your generated graph by clicking on the",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Graph",
+                    },
+                    "ref": null,
+                    "rendered": "Graph",
+                    "type": "em",
+                  },
+                  " tab. You must have toggled something for the graph to have generated.",
+                ],
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "If you want to zoom in on a certain part of a graph, you can scroll or pinch closer into the graph. You can also drag nodes around to group things together as needed.",
+                    " ",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "If you want to zoom in on a certain part of a graph, you can scroll or pinch closer into the graph. You can also drag nodes around to group things together as needed.",
+                  " ",
+                ],
+                "type": "p",
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h1>
+            Graph
+</h1>,
+          <Tabs
+            hideAdd={false}
+            prefixCls="ant-tabs"
+>
+            <TabPane
+                        placeholder={null}
+                        tab="Filters"
+            >
+                        <FiltersTab
+                                    collections={Object {}}
+                                    getCollectionInfo={[Function]}
+                                    knownCollections={Array []}
+                                    removeNodes={[Function]}
+                                    setNodes={[Function]}
+                        />
+            </TabPane>
+            <TabPane
+                        forceRender={true}
+                        placeholder={null}
+                        tab="Results"
+            >
+                        <div
+                                    className="graphContainer"
+                        >
+                                    <p>
+                                                I find you lack of filters disturbing
+                                    </p>
+                        </div>
+            </TabPane>
+            <TabPane
+                        forceRender={true}
+                        placeholder={null}
+                        tab="Help"
+            >
+                        <h2>
+                                    Creating a Graph
+                        </h2>
+                        <p>
+                                    You can add different nodes to the graph by turning on different toggles in the 
+                                    <em>
+                                                Filters
+                                    </em>
+                                     tab. Once you turn these on, a graph will be made on the 
+                                    <em>
+                                                Graph
+                                    </em>
+                                     tab.
+                                     
+                        </p>
+                        <h2>
+                                    Viewing the Graph
+                        </h2>
+                        <p>
+                                    You can view your generated graph by clicking on the
+                                     
+                                    <em>
+                                                Graph
+                                    </em>
+                                     tab. You must have toggled something for the graph to have generated.
+                        </p>
+                        <p>
+                                    If you want to zoom in on a certain part of a graph, you can scroll or pinch closer into the graph. You can also drag nodes around to group things together as needed.
+                                     
+                        </p>
+            </TabPane>
+</Tabs>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Graph",
+          },
+          "ref": null,
+          "rendered": "Graph",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <TabPane
+                placeholder={null}
+                tab="Filters"
+>
+                <FiltersTab
+                                collections={Object {}}
+                                getCollectionInfo={[Function]}
+                                knownCollections={Array []}
+                                removeNodes={[Function]}
+                                setNodes={[Function]}
+                />
+</TabPane>,
+              <TabPane
+                forceRender={true}
+                placeholder={null}
+                tab="Results"
+>
+                <div
+                                className="graphContainer"
+                >
+                                <p>
+                                                I find you lack of filters disturbing
+                                </p>
+                </div>
+</TabPane>,
+              <TabPane
+                forceRender={true}
+                placeholder={null}
+                tab="Help"
+>
+                <h2>
+                                Creating a Graph
+                </h2>
+                <p>
+                                You can add different nodes to the graph by turning on different toggles in the 
+                                <em>
+                                                Filters
+                                </em>
+                                 tab. Once you turn these on, a graph will be made on the 
+                                <em>
+                                                Graph
+                                </em>
+                                 tab.
+                                 
+                </p>
+                <h2>
+                                Viewing the Graph
+                </h2>
+                <p>
+                                You can view your generated graph by clicking on the
+                                 
+                                <em>
+                                                Graph
+                                </em>
+                                 tab. You must have toggled something for the graph to have generated.
+                </p>
+                <p>
+                                If you want to zoom in on a certain part of a graph, you can scroll or pinch closer into the graph. You can also drag nodes around to group things together as needed.
+                                 
+                </p>
+</TabPane>,
+            ],
+            "hideAdd": false,
+            "prefixCls": "ant-tabs",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "filters",
+              "nodeType": "class",
+              "props": Object {
+                "children": <FiltersTab
+                  collections={Object {}}
+                  getCollectionInfo={[Function]}
+                  knownCollections={Array []}
+                  removeNodes={[Function]}
+                  setNodes={[Function]}
+/>,
+                "placeholder": null,
+                "tab": "Filters",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "collections": Object {},
+                  "getCollectionInfo": [Function],
+                  "knownCollections": Array [],
+                  "removeNodes": [Function],
+                  "setNodes": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "graph",
+              "nodeType": "class",
+              "props": Object {
+                "children": <div
+                  className="graphContainer"
+>
+                  <p>
+                                    I find you lack of filters disturbing
+                  </p>
+</div>,
+                "forceRender": true,
+                "placeholder": null,
+                "tab": "Results",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <p>
+                    I find you lack of filters disturbing
+</p>,
+                  "className": "graphContainer",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "I find you lack of filters disturbing",
+                  },
+                  "ref": null,
+                  "rendered": "I find you lack of filters disturbing",
+                  "type": "p",
+                },
+                "type": "div",
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": "help",
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <h2>
+                    Creating a Graph
+</h2>,
+                  <p>
+                    You can add different nodes to the graph by turning on different toggles in the 
+                    <em>
+                                        Filters
+                    </em>
+                     tab. Once you turn these on, a graph will be made on the 
+                    <em>
+                                        Graph
+                    </em>
+                     tab.
+                     
+</p>,
+                  <h2>
+                    Viewing the Graph
+</h2>,
+                  <p>
+                    You can view your generated graph by clicking on the
+                     
+                    <em>
+                                        Graph
+                    </em>
+                     tab. You must have toggled something for the graph to have generated.
+</p>,
+                  <p>
+                    If you want to zoom in on a certain part of a graph, you can scroll or pinch closer into the graph. You can also drag nodes around to group things together as needed.
+                     
+</p>,
+                ],
+                "forceRender": true,
+                "placeholder": null,
+                "tab": "Help",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Creating a Graph",
+                  },
+                  "ref": null,
+                  "rendered": "Creating a Graph",
+                  "type": "h2",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "You can add different nodes to the graph by turning on different toggles in the ",
+                      <em>
+                        Filters
+</em>,
+                      " tab. Once you turn these on, a graph will be made on the ",
+                      <em>
+                        Graph
+</em>,
+                      " tab.",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "You can add different nodes to the graph by turning on different toggles in the ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Filters",
+                      },
+                      "ref": null,
+                      "rendered": "Filters",
+                      "type": "em",
+                    },
+                    " tab. Once you turn these on, a graph will be made on the ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Graph",
+                      },
+                      "ref": null,
+                      "rendered": "Graph",
+                      "type": "em",
+                    },
+                    " tab.",
+                    " ",
+                  ],
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Viewing the Graph",
+                  },
+                  "ref": null,
+                  "rendered": "Viewing the Graph",
+                  "type": "h2",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "You can view your generated graph by clicking on the",
+                      " ",
+                      <em>
+                        Graph
+</em>,
+                      " tab. You must have toggled something for the graph to have generated.",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "You can view your generated graph by clicking on the",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Graph",
+                      },
+                      "ref": null,
+                      "rendered": "Graph",
+                      "type": "em",
+                    },
+                    " tab. You must have toggled something for the graph to have generated.",
+                  ],
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "If you want to zoom in on a certain part of a graph, you can scroll or pinch closer into the graph. You can also drag nodes around to group things together as needed.",
+                      " ",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "If you want to zoom in on a certain part of a graph, you can scroll or pinch closer into the graph. You can also drag nodes around to group things together as needed.",
+                    " ",
+                  ],
+                  "type": "p",
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

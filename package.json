@@ -23,7 +23,7 @@
     "eject": "react-scripts eject",
     "flow": "flow",
     "start": "react-app-rewired start",
-    "test": "react-scripts test "
+    "test": "react-app-rewired test --env=jsdom"
   },
   "devDependencies": {
     "babel-plugin-import": "^1.6.5",

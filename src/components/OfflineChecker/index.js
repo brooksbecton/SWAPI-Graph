@@ -18,7 +18,6 @@ type State = {
 class OfflineChecker extends Component<Props, State> {
   constructor() {
     super();
-
     this.state = {
       online: true
     };

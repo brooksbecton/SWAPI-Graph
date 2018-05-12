@@ -2,13 +2,14 @@ import React from "react";
 import Enzyme, { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 
-import Graph from "./index";
+import Home from "./index";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe("Graph", () => {
+describe("Home", () => {
   it("renders", () => {
-    const tree = shallow(<Graph />);
+    const window = {};
+    const tree = shallow(<Home />);
     expect(tree).toMatchSnapshot();
   });
 });

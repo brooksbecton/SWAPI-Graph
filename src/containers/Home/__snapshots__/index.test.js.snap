@@ -1,0 +1,1399 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Home />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h1>
+          Home
+</h1>,
+        <Row
+          gutter={0}
+>
+          <picture
+                    className="mainHero"
+          >
+                    <source
+                              srcSet="main_hero.webp"
+                              type="image/webp"
+                    />
+                    <img
+                              alt="Storm trooper action figure look off to the right, black and white"
+                              srcSet="main_hero.png"
+                    />
+          </picture>
+</Row>,
+        <Row
+          className="triSection"
+          gutter={16}
+>
+          <Col
+                    md={8}
+                    sm={24}
+          >
+                    <h2>
+                              Graph
+                    </h2>
+                    <p>
+                              Checkout the graph that shows all of the connections between films, people, species, vehicles and more! Or if you are interested in the code, check out the
+                               
+                              <a
+                                        href="https://github.com/brooksbecton/SWAPI-Graph"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                              >
+                                        repo
+                              </a>
+                    </p>
+          </Col>
+          <Col
+                    md={8}
+                    sm={24}
+          >
+                    <h2>
+                              About
+                    </h2>
+                    <p>
+                              The graph shows all of the connections and information from the
+                               
+                              <a
+                                        href="https://swapi.co/"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                              >
+                                        SWAPI
+                              </a>
+                              . They have a ton of fascinating information, and this app brings that information into a intuitive user interface.
+                    </p>
+          </Col>
+          <Col
+                    md={8}
+                    sm={24}
+          >
+                    <h2>
+                              Feedback
+                    </h2>
+                    <p>
+                              This project is still very new and has a lot of room for improvement! If you have any ideas or any issues, let me know!
+                    </p>
+          </Col>
+</Row>,
+        <Row
+          gutter={0}
+>
+          <h2>
+                    Getting started
+          </h2>
+          <Row
+                    gutter={20}
+          >
+                    <Col
+                              span={12}
+                    >
+                              <h3>
+                                        What is this?
+                              </h3>
+                              <p>
+                                        This allows users to see the kinds of data and relantionships that the SWAPI has. Instead of making API calls you can filter the graph down to checkout different relationships based on films, people, or any other collection that the SWAPI offers
+                              </p>
+                    </Col>
+                    <Col
+                              span={12}
+                    >
+                              <h3>
+                                        How do I use it? 
+                              </h3>
+                              <p>
+                                        Go to the 
+                                        <Link
+                                                  replace={false}
+                                                  to="/graph"
+                                        >
+                                                  Graph
+                                        </Link>
+                                         and allow the assets to load. Once you are there you can check different boxes to produce different graphs that show all kinds of relationships.
+                              </p>
+                    </Col>
+          </Row>
+</Row>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Home",
+        },
+        "ref": null,
+        "rendered": "Home",
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": <picture
+            className="mainHero"
+>
+            <source
+                        srcSet="main_hero.webp"
+                        type="image/webp"
+            />
+            <img
+                        alt="Storm trooper action figure look off to the right, black and white"
+                        srcSet="main_hero.png"
+            />
+</picture>,
+          "gutter": 0,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <source
+                srcSet="main_hero.webp"
+                type="image/webp"
+/>,
+              <img
+                alt="Storm trooper action figure look off to the right, black and white"
+                srcSet="main_hero.png"
+/>,
+            ],
+            "className": "mainHero",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "srcSet": "main_hero.webp",
+                "type": "image/webp",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "source",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "Storm trooper action figure look off to the right, black and white",
+                "srcSet": "main_hero.png",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+          ],
+          "type": "picture",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <Col
+              md={8}
+              sm={24}
+>
+              <h2>
+                            Graph
+              </h2>
+              <p>
+                            Checkout the graph that shows all of the connections between films, people, species, vehicles and more! Or if you are interested in the code, check out the
+                             
+                            <a
+                                          href="https://github.com/brooksbecton/SWAPI-Graph"
+                                          rel="noopener noreferrer"
+                                          target="_blank"
+                            >
+                                          repo
+                            </a>
+              </p>
+</Col>,
+            <Col
+              md={8}
+              sm={24}
+>
+              <h2>
+                            About
+              </h2>
+              <p>
+                            The graph shows all of the connections and information from the
+                             
+                            <a
+                                          href="https://swapi.co/"
+                                          rel="noopener noreferrer"
+                                          target="_blank"
+                            >
+                                          SWAPI
+                            </a>
+                            . They have a ton of fascinating information, and this app brings that information into a intuitive user interface.
+              </p>
+</Col>,
+            <Col
+              md={8}
+              sm={24}
+>
+              <h2>
+                            Feedback
+              </h2>
+              <p>
+                            This project is still very new and has a lot of room for improvement! If you have any ideas or any issues, let me know!
+              </p>
+</Col>,
+          ],
+          "className": "triSection",
+          "gutter": 16,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <h2>
+                  Graph
+</h2>,
+                <p>
+                  Checkout the graph that shows all of the connections between films, people, species, vehicles and more! Or if you are interested in the code, check out the
+                   
+                  <a
+                                    href="https://github.com/brooksbecton/SWAPI-Graph"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                  >
+                                    repo
+                  </a>
+</p>,
+              ],
+              "md": 8,
+              "sm": 24,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Graph",
+                },
+                "ref": null,
+                "rendered": "Graph",
+                "type": "h2",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Checkout the graph that shows all of the connections between films, people, species, vehicles and more! Or if you are interested in the code, check out the",
+                    " ",
+                    <a
+                      href="https://github.com/brooksbecton/SWAPI-Graph"
+                      rel="noopener noreferrer"
+                      target="_blank"
+>
+                      repo
+</a>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Checkout the graph that shows all of the connections between films, people, species, vehicles and more! Or if you are interested in the code, check out the",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "repo",
+                      "href": "https://github.com/brooksbecton/SWAPI-Graph",
+                      "rel": "noopener noreferrer",
+                      "target": "_blank",
+                    },
+                    "ref": null,
+                    "rendered": "repo",
+                    "type": "a",
+                  },
+                ],
+                "type": "p",
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <h2>
+                  About
+</h2>,
+                <p>
+                  The graph shows all of the connections and information from the
+                   
+                  <a
+                                    href="https://swapi.co/"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                  >
+                                    SWAPI
+                  </a>
+                  . They have a ton of fascinating information, and this app brings that information into a intuitive user interface.
+</p>,
+              ],
+              "md": 8,
+              "sm": 24,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "About",
+                },
+                "ref": null,
+                "rendered": "About",
+                "type": "h2",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "The graph shows all of the connections and information from the",
+                    " ",
+                    <a
+                      href="https://swapi.co/"
+                      rel="noopener noreferrer"
+                      target="_blank"
+>
+                      SWAPI
+</a>,
+                    ". They have a ton of fascinating information, and this app brings that information into a intuitive user interface.",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "The graph shows all of the connections and information from the",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "SWAPI",
+                      "href": "https://swapi.co/",
+                      "rel": "noopener noreferrer",
+                      "target": "_blank",
+                    },
+                    "ref": null,
+                    "rendered": "SWAPI",
+                    "type": "a",
+                  },
+                  ". They have a ton of fascinating information, and this app brings that information into a intuitive user interface.",
+                ],
+                "type": "p",
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <h2>
+                  Feedback
+</h2>,
+                <p>
+                  This project is still very new and has a lot of room for improvement! If you have any ideas or any issues, let me know!
+</p>,
+              ],
+              "md": 8,
+              "sm": 24,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Feedback",
+                },
+                "ref": null,
+                "rendered": "Feedback",
+                "type": "h2",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "This project is still very new and has a lot of room for improvement! If you have any ideas or any issues, let me know!",
+                },
+                "ref": null,
+                "rendered": "This project is still very new and has a lot of room for improvement! If you have any ideas or any issues, let me know!",
+                "type": "p",
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <h2>
+              Getting started
+</h2>,
+            <Row
+              gutter={20}
+>
+              <Col
+                            span={12}
+              >
+                            <h3>
+                                          What is this?
+                            </h3>
+                            <p>
+                                          This allows users to see the kinds of data and relantionships that the SWAPI has. Instead of making API calls you can filter the graph down to checkout different relationships based on films, people, or any other collection that the SWAPI offers
+                            </p>
+              </Col>
+              <Col
+                            span={12}
+              >
+                            <h3>
+                                          How do I use it? 
+                            </h3>
+                            <p>
+                                          Go to the 
+                                          <Link
+                                                        replace={false}
+                                                        to="/graph"
+                                          >
+                                                        Graph
+                                          </Link>
+                                           and allow the assets to load. Once you are there you can check different boxes to produce different graphs that show all kinds of relationships.
+                            </p>
+              </Col>
+</Row>,
+          ],
+          "gutter": 0,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Getting started",
+            },
+            "ref": null,
+            "rendered": "Getting started",
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <Col
+                  span={12}
+>
+                  <h3>
+                                    What is this?
+                  </h3>
+                  <p>
+                                    This allows users to see the kinds of data and relantionships that the SWAPI has. Instead of making API calls you can filter the graph down to checkout different relationships based on films, people, or any other collection that the SWAPI offers
+                  </p>
+</Col>,
+                <Col
+                  span={12}
+>
+                  <h3>
+                                    How do I use it? 
+                  </h3>
+                  <p>
+                                    Go to the 
+                                    <Link
+                                                      replace={false}
+                                                      to="/graph"
+                                    >
+                                                      Graph
+                                    </Link>
+                                     and allow the assets to load. Once you are there you can check different boxes to produce different graphs that show all kinds of relationships.
+                  </p>
+</Col>,
+              ],
+              "gutter": 20,
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <h3>
+                      What is this?
+</h3>,
+                    <p>
+                      This allows users to see the kinds of data and relantionships that the SWAPI has. Instead of making API calls you can filter the graph down to checkout different relationships based on films, people, or any other collection that the SWAPI offers
+</p>,
+                  ],
+                  "span": 12,
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "What is this?",
+                    },
+                    "ref": null,
+                    "rendered": "What is this?",
+                    "type": "h3",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "This allows users to see the kinds of data and relantionships that the SWAPI has. Instead of making API calls you can filter the graph down to checkout different relationships based on films, people, or any other collection that the SWAPI offers",
+                    },
+                    "ref": null,
+                    "rendered": "This allows users to see the kinds of data and relantionships that the SWAPI has. Instead of making API calls you can filter the graph down to checkout different relationships based on films, people, or any other collection that the SWAPI offers",
+                    "type": "p",
+                  },
+                ],
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": Array [
+                    <h3>
+                      How do I use it? 
+</h3>,
+                    <p>
+                      Go to the 
+                      <Link
+                                            replace={false}
+                                            to="/graph"
+                      >
+                                            Graph
+                      </Link>
+                       and allow the assets to load. Once you are there you can check different boxes to produce different graphs that show all kinds of relationships.
+</p>,
+                  ],
+                  "span": 12,
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "How do I use it? ",
+                    },
+                    "ref": null,
+                    "rendered": "How do I use it? ",
+                    "type": "h3",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Go to the ",
+                        <Link
+                          replace={false}
+                          to="/graph"
+>
+                          Graph
+</Link>,
+                        " and allow the assets to load. Once you are there you can check different boxes to produce different graphs that show all kinds of relationships.",
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Go to the ",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "children": "Graph",
+                          "replace": false,
+                          "to": "/graph",
+                        },
+                        "ref": null,
+                        "rendered": "Graph",
+                        "type": [Function],
+                      },
+                      " and allow the assets to load. Once you are there you can check different boxes to produce different graphs that show all kinds of relationships.",
+                    ],
+                    "type": "p",
+                  },
+                ],
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h1>
+            Home
+</h1>,
+          <Row
+            gutter={0}
+>
+            <picture
+                        className="mainHero"
+            >
+                        <source
+                                    srcSet="main_hero.webp"
+                                    type="image/webp"
+                        />
+                        <img
+                                    alt="Storm trooper action figure look off to the right, black and white"
+                                    srcSet="main_hero.png"
+                        />
+            </picture>
+</Row>,
+          <Row
+            className="triSection"
+            gutter={16}
+>
+            <Col
+                        md={8}
+                        sm={24}
+            >
+                        <h2>
+                                    Graph
+                        </h2>
+                        <p>
+                                    Checkout the graph that shows all of the connections between films, people, species, vehicles and more! Or if you are interested in the code, check out the
+                                     
+                                    <a
+                                                href="https://github.com/brooksbecton/SWAPI-Graph"
+                                                rel="noopener noreferrer"
+                                                target="_blank"
+                                    >
+                                                repo
+                                    </a>
+                        </p>
+            </Col>
+            <Col
+                        md={8}
+                        sm={24}
+            >
+                        <h2>
+                                    About
+                        </h2>
+                        <p>
+                                    The graph shows all of the connections and information from the
+                                     
+                                    <a
+                                                href="https://swapi.co/"
+                                                rel="noopener noreferrer"
+                                                target="_blank"
+                                    >
+                                                SWAPI
+                                    </a>
+                                    . They have a ton of fascinating information, and this app brings that information into a intuitive user interface.
+                        </p>
+            </Col>
+            <Col
+                        md={8}
+                        sm={24}
+            >
+                        <h2>
+                                    Feedback
+                        </h2>
+                        <p>
+                                    This project is still very new and has a lot of room for improvement! If you have any ideas or any issues, let me know!
+                        </p>
+            </Col>
+</Row>,
+          <Row
+            gutter={0}
+>
+            <h2>
+                        Getting started
+            </h2>
+            <Row
+                        gutter={20}
+            >
+                        <Col
+                                    span={12}
+                        >
+                                    <h3>
+                                                What is this?
+                                    </h3>
+                                    <p>
+                                                This allows users to see the kinds of data and relantionships that the SWAPI has. Instead of making API calls you can filter the graph down to checkout different relationships based on films, people, or any other collection that the SWAPI offers
+                                    </p>
+                        </Col>
+                        <Col
+                                    span={12}
+                        >
+                                    <h3>
+                                                How do I use it? 
+                                    </h3>
+                                    <p>
+                                                Go to the 
+                                                <Link
+                                                            replace={false}
+                                                            to="/graph"
+                                                >
+                                                            Graph
+                                                </Link>
+                                                 and allow the assets to load. Once you are there you can check different boxes to produce different graphs that show all kinds of relationships.
+                                    </p>
+                        </Col>
+            </Row>
+</Row>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Home",
+          },
+          "ref": null,
+          "rendered": "Home",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": <picture
+              className="mainHero"
+>
+              <source
+                            srcSet="main_hero.webp"
+                            type="image/webp"
+              />
+              <img
+                            alt="Storm trooper action figure look off to the right, black and white"
+                            srcSet="main_hero.png"
+              />
+</picture>,
+            "gutter": 0,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <source
+                  srcSet="main_hero.webp"
+                  type="image/webp"
+/>,
+                <img
+                  alt="Storm trooper action figure look off to the right, black and white"
+                  srcSet="main_hero.png"
+/>,
+              ],
+              "className": "mainHero",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "srcSet": "main_hero.webp",
+                  "type": "image/webp",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "source",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "Storm trooper action figure look off to the right, black and white",
+                  "srcSet": "main_hero.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+            ],
+            "type": "picture",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <Col
+                md={8}
+                sm={24}
+>
+                <h2>
+                                Graph
+                </h2>
+                <p>
+                                Checkout the graph that shows all of the connections between films, people, species, vehicles and more! Or if you are interested in the code, check out the
+                                 
+                                <a
+                                                href="https://github.com/brooksbecton/SWAPI-Graph"
+                                                rel="noopener noreferrer"
+                                                target="_blank"
+                                >
+                                                repo
+                                </a>
+                </p>
+</Col>,
+              <Col
+                md={8}
+                sm={24}
+>
+                <h2>
+                                About
+                </h2>
+                <p>
+                                The graph shows all of the connections and information from the
+                                 
+                                <a
+                                                href="https://swapi.co/"
+                                                rel="noopener noreferrer"
+                                                target="_blank"
+                                >
+                                                SWAPI
+                                </a>
+                                . They have a ton of fascinating information, and this app brings that information into a intuitive user interface.
+                </p>
+</Col>,
+              <Col
+                md={8}
+                sm={24}
+>
+                <h2>
+                                Feedback
+                </h2>
+                <p>
+                                This project is still very new and has a lot of room for improvement! If you have any ideas or any issues, let me know!
+                </p>
+</Col>,
+            ],
+            "className": "triSection",
+            "gutter": 16,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <h2>
+                    Graph
+</h2>,
+                  <p>
+                    Checkout the graph that shows all of the connections between films, people, species, vehicles and more! Or if you are interested in the code, check out the
+                     
+                    <a
+                                        href="https://github.com/brooksbecton/SWAPI-Graph"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                    >
+                                        repo
+                    </a>
+</p>,
+                ],
+                "md": 8,
+                "sm": 24,
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Graph",
+                  },
+                  "ref": null,
+                  "rendered": "Graph",
+                  "type": "h2",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Checkout the graph that shows all of the connections between films, people, species, vehicles and more! Or if you are interested in the code, check out the",
+                      " ",
+                      <a
+                        href="https://github.com/brooksbecton/SWAPI-Graph"
+                        rel="noopener noreferrer"
+                        target="_blank"
+>
+                        repo
+</a>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Checkout the graph that shows all of the connections between films, people, species, vehicles and more! Or if you are interested in the code, check out the",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "repo",
+                        "href": "https://github.com/brooksbecton/SWAPI-Graph",
+                        "rel": "noopener noreferrer",
+                        "target": "_blank",
+                      },
+                      "ref": null,
+                      "rendered": "repo",
+                      "type": "a",
+                    },
+                  ],
+                  "type": "p",
+                },
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <h2>
+                    About
+</h2>,
+                  <p>
+                    The graph shows all of the connections and information from the
+                     
+                    <a
+                                        href="https://swapi.co/"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                    >
+                                        SWAPI
+                    </a>
+                    . They have a ton of fascinating information, and this app brings that information into a intuitive user interface.
+</p>,
+                ],
+                "md": 8,
+                "sm": 24,
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "About",
+                  },
+                  "ref": null,
+                  "rendered": "About",
+                  "type": "h2",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "The graph shows all of the connections and information from the",
+                      " ",
+                      <a
+                        href="https://swapi.co/"
+                        rel="noopener noreferrer"
+                        target="_blank"
+>
+                        SWAPI
+</a>,
+                      ". They have a ton of fascinating information, and this app brings that information into a intuitive user interface.",
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "The graph shows all of the connections and information from the",
+                    " ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "SWAPI",
+                        "href": "https://swapi.co/",
+                        "rel": "noopener noreferrer",
+                        "target": "_blank",
+                      },
+                      "ref": null,
+                      "rendered": "SWAPI",
+                      "type": "a",
+                    },
+                    ". They have a ton of fascinating information, and this app brings that information into a intuitive user interface.",
+                  ],
+                  "type": "p",
+                },
+              ],
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <h2>
+                    Feedback
+</h2>,
+                  <p>
+                    This project is still very new and has a lot of room for improvement! If you have any ideas or any issues, let me know!
+</p>,
+                ],
+                "md": 8,
+                "sm": 24,
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Feedback",
+                  },
+                  "ref": null,
+                  "rendered": "Feedback",
+                  "type": "h2",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "This project is still very new and has a lot of room for improvement! If you have any ideas or any issues, let me know!",
+                  },
+                  "ref": null,
+                  "rendered": "This project is still very new and has a lot of room for improvement! If you have any ideas or any issues, let me know!",
+                  "type": "p",
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <h2>
+                Getting started
+</h2>,
+              <Row
+                gutter={20}
+>
+                <Col
+                                span={12}
+                >
+                                <h3>
+                                                What is this?
+                                </h3>
+                                <p>
+                                                This allows users to see the kinds of data and relantionships that the SWAPI has. Instead of making API calls you can filter the graph down to checkout different relationships based on films, people, or any other collection that the SWAPI offers
+                                </p>
+                </Col>
+                <Col
+                                span={12}
+                >
+                                <h3>
+                                                How do I use it? 
+                                </h3>
+                                <p>
+                                                Go to the 
+                                                <Link
+                                                                replace={false}
+                                                                to="/graph"
+                                                >
+                                                                Graph
+                                                </Link>
+                                                 and allow the assets to load. Once you are there you can check different boxes to produce different graphs that show all kinds of relationships.
+                                </p>
+                </Col>
+</Row>,
+            ],
+            "gutter": 0,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Getting started",
+              },
+              "ref": null,
+              "rendered": "Getting started",
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": Array [
+                  <Col
+                    span={12}
+>
+                    <h3>
+                                        What is this?
+                    </h3>
+                    <p>
+                                        This allows users to see the kinds of data and relantionships that the SWAPI has. Instead of making API calls you can filter the graph down to checkout different relationships based on films, people, or any other collection that the SWAPI offers
+                    </p>
+</Col>,
+                  <Col
+                    span={12}
+>
+                    <h3>
+                                        How do I use it? 
+                    </h3>
+                    <p>
+                                        Go to the 
+                                        <Link
+                                                            replace={false}
+                                                            to="/graph"
+                                        >
+                                                            Graph
+                                        </Link>
+                                         and allow the assets to load. Once you are there you can check different boxes to produce different graphs that show all kinds of relationships.
+                    </p>
+</Col>,
+                ],
+                "gutter": 20,
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <h3>
+                        What is this?
+</h3>,
+                      <p>
+                        This allows users to see the kinds of data and relantionships that the SWAPI has. Instead of making API calls you can filter the graph down to checkout different relationships based on films, people, or any other collection that the SWAPI offers
+</p>,
+                    ],
+                    "span": 12,
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "What is this?",
+                      },
+                      "ref": null,
+                      "rendered": "What is this?",
+                      "type": "h3",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "This allows users to see the kinds of data and relantionships that the SWAPI has. Instead of making API calls you can filter the graph down to checkout different relationships based on films, people, or any other collection that the SWAPI offers",
+                      },
+                      "ref": null,
+                      "rendered": "This allows users to see the kinds of data and relantionships that the SWAPI has. Instead of making API calls you can filter the graph down to checkout different relationships based on films, people, or any other collection that the SWAPI offers",
+                      "type": "p",
+                    },
+                  ],
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": Array [
+                      <h3>
+                        How do I use it? 
+</h3>,
+                      <p>
+                        Go to the 
+                        <Link
+                                                replace={false}
+                                                to="/graph"
+                        >
+                                                Graph
+                        </Link>
+                         and allow the assets to load. Once you are there you can check different boxes to produce different graphs that show all kinds of relationships.
+</p>,
+                    ],
+                    "span": 12,
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "How do I use it? ",
+                      },
+                      "ref": null,
+                      "rendered": "How do I use it? ",
+                      "type": "h3",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "Go to the ",
+                          <Link
+                            replace={false}
+                            to="/graph"
+>
+                            Graph
+</Link>,
+                          " and allow the assets to load. Once you are there you can check different boxes to produce different graphs that show all kinds of relationships.",
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "Go to the ",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "children": "Graph",
+                            "replace": false,
+                            "to": "/graph",
+                          },
+                          "ref": null,
+                          "rendered": "Graph",
+                          "type": [Function],
+                        },
+                        " and allow the assets to load. Once you are there you can check different boxes to produce different graphs that show all kinds of relationships.",
+                      ],
+                      "type": "p",
+                    },
+                  ],
+                  "type": [Function],
+                },
+              ],
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
