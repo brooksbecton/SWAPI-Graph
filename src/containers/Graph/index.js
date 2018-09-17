@@ -97,65 +97,19 @@ class Graph extends Component {
       });
     } else {
       this.setState({ cacheEmpty: true });
-      const peopleInterface = SwapiGraphInterface(
-        "https://swapi.co/api/people/"
-      );
-      const peopleNodes = await peopleInterface.getCollectionItems();
-      const peopleEdges = await peopleInterface.addEdges();
 
-      const filmsInterface = SwapiGraphInterface("https://swapi.co/api/films/");
-      const filmsNodes = await filmsInterface.getCollectionItems();
-      const filmsEdges = await filmsInterface.addEdges();
+      const swapiInterface = SwapiGraphInterface();
 
-      const planetsInterface = SwapiGraphInterface(
-        "https://swapi.co/api/planets/"
-      );
-      const planetsNodes = await planetsInterface.getCollectionItems();
-      const planetsEdges = await planetsInterface.addEdges();
-
-      const speciesInterface = SwapiGraphInterface(
-        "https://swapi.co/api/species/"
-      );
-      const speciesNodes = await speciesInterface.getCollectionItems();
-      const speciesEdges = await speciesInterface.addEdges();
-
-      const starshipsInterface = SwapiGraphInterface(
-        "https://swapi.co/api/starships/"
-      );
-      const starshipsNodes = await starshipsInterface.getCollectionItems();
-      const starshipsEdges = await starshipsInterface.addEdges();
-
-      const vehiclesInterface = SwapiGraphInterface(
-        "https://swapi.co/api/vehicles/"
-      );
-      const vehiclesNodes = await vehiclesInterface.getCollectionItems();
-      const vehiclesEdges = await vehiclesInterface.addEdges();
-
-      const newNodes = this.state.nodes.concat(
-        peopleNodes,
-        filmsNodes,
-        planetsNodes,
-        speciesNodes,
-        starshipsNodes,
-        vehiclesNodes
-      );
-
-      const newEdges = this.state.edges.concat(
-        peopleEdges,
-        filmsEdges,
-        planetsEdges,
-        speciesEdges,
-        starshipsEdges,
-        vehiclesEdges
-      );
+      const nodes = await swapiInterface.getCollectionItems();
+      const edges = await swapiInterface.addEdges();
 
       this.setState({
-        nodes: newNodes,
-        edges: newEdges
+        nodes: [...this.state.nodes, nodes],
+        edges: [...this.state.edges, edges]
       });
 
       localforage
-        .setItem("swapiData", { nodes: newNodes, edges: newEdges })
+        .setItem("swapiData", { nodes, edges })
         .then(() => {
           this.setState({ cacheSuccessful: true });
         })

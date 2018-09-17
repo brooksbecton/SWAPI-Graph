@@ -3,7 +3,7 @@
 /**
  * Interface for adding SWAPI collections to a graph.
  */
-export default (url: string, data: ?{}) => {
+export default (url: string = "https://swapi.co/api/", data: ?{}) => {
   const swapiBaseUrl = "https://swapi.co/api/";
 
   let nodes: Array<Object> = [];
@@ -31,6 +31,9 @@ export default (url: string, data: ?{}) => {
     return edges;
   };
 
+  /**
+   * 
+   */
   const getCollectionItems = async (collectionName: string) => {
     let targetUrl: string;
     if (collectionName) {
@@ -59,11 +62,17 @@ export default (url: string, data: ?{}) => {
     return nodes;
   };
 
+  const getEdges = () => edges; 
+  
+  const getNodes = () => nodes; 
+
   /**
    * Queries the SWAPI for it's known collection like people, films, etc
    * and adds it the object prop 'knownSwapiCollections'
+   * 
+   * @async
    */
-  const getKnownCollection = async () => {
+  const getKnownCollection = async (): {collectionName: string, collectionUrl: string} => {
     const resp = await fetch(swapiBaseUrl);
     const collectionUrls = await resp.json();
     knownSwapiCollections = Object.keys(collectionUrls).map(key => key);
@@ -78,19 +87,21 @@ export default (url: string, data: ?{}) => {
       knownSwapiCollections = await getKnownCollection();
     }
 
-    let newEdges: Array<{ from: string, to: string }> = [];
+    let edges: Array<{ from: string, to: string }> = [];
     knownSwapiCollections.forEach(collectionName => {
       if (node.hasOwnProperty(collectionName)) {
         node[collectionName].forEach(url => {
-          newEdges = newEdges.concat({ from: node.url, to: url });
+          edges = edges.concat({ from: node.url, to: url });
         });
       }
     });
-    return newEdges;
+    return edges;
   };
 
   return {
     addEdges,
+    edges: getEdges(),
+    nodes: getNodes(),
     getCollectionItems,
     getKnownCollection,
     getNodesEdges
