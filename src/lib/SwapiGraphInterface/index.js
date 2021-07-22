@@ -3,8 +3,8 @@
 /**
  * Interface for adding SWAPI collections to a graph.
  */
-export default (url: string = "https://swapi.co/api/", data: ?{}) => {
-  const swapiBaseUrl = "https://swapi.co/api/";
+export default (url: string = "https://swapi.dev/api/", data: ?{}) => {
+  const swapiBaseUrl = "https://swapi.dev/api/";
 
   let nodes: Array<Object> = [];
   let edges: Array<{ from: string, to: string }> = [];
